@@ -1,0 +1,174 @@
+﻿﻿ /* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo general */
+body {
+  background-color: #f0f0f0; /* gris claro */
+  color: #333; /* texto oscuro */
+  height: 100vh;
+  /*    width:100%;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+.navBar {
+  background-color: #444;
+  width: 100%;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navBar__ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navBar__ul__li {
+  font-weight: bold;
+  list-style: none;
+}
+  /*Hover suave*/
+  .navBar__ul__li:hover {
+    color: #ccc;
+    cursor: pointer;
+  }
+
+.navBar__link.active {
+  color: aqua;
+  letter-spacing: .2rem;
+}
+/* Estilo para los links de navegación */
+.navBar__link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+  /* Hover suave */
+  .navBar__link:hover {
+    color: #ccc;
+  }
+/* Título */
+.title {
+  margin: 2rem 0 1rem 0;
+  font-size: 1.8rem;
+  color: #555;
+}
+
+/* Buscador de sucursales */
+
+.busqueda {
+  background-color: #fff;
+  /* border: 2px solid #999;*/
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  max-width: 40%;
+  min-width:300px; 
+  /*max-width: 50%;*/
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in;
+}
+/* */
+.busqueda__span {
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Inputs y botones */
+.busqueda input[type="text"],
+.busqueda .aspNet-Button {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #777;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+  .busqueda input[type="text"]:focus {
+    border-color: #333;
+  }
+
+.busqueda .aspNet-Button {
+  background-color: #888;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+  .busqueda .aspNet-Button:hover {
+    background-color: #666;
+  }
+
+/*Validaciones*/
+.validaciones {
+  margin-top: -.5rem;
+  font-size: .6rem;
+  color: #ff0000;
+  font-weight: bold;
+  letter-spacing: .2rem;
+  padding: 0 .1rem;
+  user-select: none;
+}
+
+
+/* GridView */
+.gridFiltros {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  animation: fadeIn 0.6s ease-in;
+}
+
+  .gridFiltros th {
+    background-color: #ccc;
+    color: #333;
+    padding: 0.7rem;
+    border: 1px solid #999;
+    text-align: left;
+  }
+
+  .gridFiltros td {
+    background-color: #f9f9f9;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+  }
+
+  .gridFiltros tr:hover {
+    background-color: #eee;
+  }
+
+
+
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
