@@ -15,7 +15,7 @@ namespace Data
 
     public DataTable GetAllSucursales()
     {
-      DataTable dataTable = _dataAccess.GetDataTable("Sucursales", "SELECT S.Id_Sucursal, S.NombreSucursal, S.DescripcionSucursal AS 'Descripcion', P.DescripcionProvincia AS 'Provincias',S.DireccionSucursal AS 'Direccion' FROM Sucursal S JOIN Provincia P ON S.Id_ProvinciaSucursal = P.Id_Provincia");
+      DataTable dataTable = _dataAccess.GetDataTable("Sucursal", "SELECT S.Id_Sucursal, S.NombreSucursal, S.DescripcionSucursal AS 'Descripcion', P.DescripcionProvincia AS 'Provincias',S.DireccionSucursal AS 'Direccion' FROM Sucursal S JOIN Provincia P ON S.Id_ProvinciaSucursal = P.Id_Provincia");
       return dataTable;
     }
   }

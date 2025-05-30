@@ -42,11 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SucursalService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{e8416ada-9028-4582-b051-61954c38a96e}</Project>
-      <Name>DataAccess</Name>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{5c9a8ac7-75d6-49a8-a4c8-753c0a96e9a7}</Project>
+      <Name>Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{ce25007a-3511-4b15-85f0-03029c5a87a1}</Project>
