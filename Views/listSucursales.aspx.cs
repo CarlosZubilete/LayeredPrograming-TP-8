@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using Business;
+using Entities;
 using System.Data;
 
 
@@ -28,5 +29,27 @@ namespace Views
       gridFiltros.DataBind();
     }
 
+    protected void BtnFilter_Click(object sender, EventArgs e)
+    {
+      String input = txtFind.Text.Trim();
+
+      if (String.IsNullOrEmpty(input))
+      {
+        lblShow.Text = "Please enter a Sucursale Id";
+        return;
+      }
+
+      String queryFilter = $" WHERE Id_Sucursal = {input} ";
+      DataTable tableSucursales = _sucursalService.GetAllSucursales(queryFilter);
+      gridFiltros.DataSource = tableSucursales;
+      gridFiltros.DataBind();
+      // Sucursal sucursal = new Sucursal { Id = inputId };
+
+    }
+
+    protected void BtnShowAll_Click(object sender, EventArgs e)
+    {
+      this.Load_GridView();
+    }
   }
 }

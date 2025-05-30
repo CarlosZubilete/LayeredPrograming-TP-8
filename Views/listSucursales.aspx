@@ -55,10 +55,10 @@
           MinimumValue="1">
         </asp:RangeValidator>--%>
         <%--MaximumValue="15" , Setemos los valores desde appx.cs--%> 
-        <%-- Boton Filtrar --%>
-        <asp:Button runat="server" ID="btnFilter" Text="Filtrar"  ValidationGroup="Filter" CssClass="aspNet-Button" />
-        <%-- Boton Mostrar Todos --%>
-        <asp:Button runat="server" ID="btnShowAll" Text="Mostrar Todos"  CssClass="aspNet-Button" />
+        <%-- BUTTON FILTER--%>
+        <asp:Button runat="server" ID="btnFilter" Text="Filtrar"  ValidationGroup="Filter" CssClass="aspNet-Button" OnClick="BtnFilter_Click" />
+        <%-- BUTTON SHOW ALL --%>
+        <asp:Button runat="server" ID="btnShowAll" Text="Mostrar Todos"  CssClass="aspNet-Button" OnClick="BtnShowAll_Click" />
       </span>
       <asp:Label runat="server" ID="lblShow"></asp:Label>
     </div>

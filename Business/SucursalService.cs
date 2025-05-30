@@ -13,9 +13,9 @@ namespace Business
   {
     private DaoSucursal _dao = new DaoSucursal();
     public SucursalService() { }
-    public DataTable GetAllSucursales()
+    public DataTable GetAllSucursales( String queryFilter = null)
     {
-      return _dao.GetAllSucursales();
+      return _dao.GetAllSucursales(queryFilter);
     }
   }
 }
