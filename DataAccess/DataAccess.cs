@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DataAccess
@@ -11,6 +12,24 @@ namespace DataAccess
   {
     private String _connectingString_DBSucursales = @"Data Source=DESKTOP-LFTFVP5\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
     public DataAccess() { }
+    public DataTable GetDataTable(String nameTable, String querySql)
+    {
+      using (SqlConnection connection = GetConnection())
+      {
+        try
+        {
+          DataSet dataSet = new DataSet();
+          SqlDataAdapter dataAdapter = GetDataAdapter(querySql, connection);
+          dataAdapter.Fill(dataSet, nameTable);
+          return dataSet.Tables[nameTable];
+        }
+        catch (SqlException err)
+        {
+          Console.WriteLine("Error: " + err.Message);
+          return null;
+        }
+      }
+    }
     private SqlConnection GetConnection()
     {
       try
