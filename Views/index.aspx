@@ -33,7 +33,9 @@
       </li>
     </ul>
   </div>
+
   <h2 class="title">Agregar sucursales</h2>
+
   <form id="form1" runat="server">
     <%-- Nombre Sucursal --%>
     <div>

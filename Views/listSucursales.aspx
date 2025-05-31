@@ -56,7 +56,6 @@
         <asp:Label runat="server" ID="lblShow" CssClass="lblNotFound"></asp:Label>
       </span>
     </div>
-  
 
     <%--Grid con los resultados: --%>
     <div class="gridFiltros">

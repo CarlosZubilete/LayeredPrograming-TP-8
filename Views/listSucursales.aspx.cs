@@ -4,9 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 using Business;
-using Entities;
 using System.Data;
 
 
@@ -14,7 +12,7 @@ namespace Views
 {
   public partial class listSucursales : System.Web.UI.Page
   {
-    private SucursalService _sucursalService = new SucursalService();
+    private readonly SucursalService _sucursalService = new SucursalService();
     protected void Page_Load(object sender, EventArgs e)
     {
       if (!IsPostBack)
