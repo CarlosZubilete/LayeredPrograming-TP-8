@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Data
 {
-  public class DataAccess
+  class DataAccess
   {
     private String _connectingString_DBSucursales = @"Data Source=DESKTOP-LFTFVP5\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True";
     public DataAccess() { }

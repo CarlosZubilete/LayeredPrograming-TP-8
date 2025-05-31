@@ -22,9 +22,20 @@ namespace Views
         this.Load_GridView();
       }
     }
-    private void Load_GridView()
+    private void Load_GridView(String queryFiler = null)
     {
-      DataTable tableSucursales = _sucursalService.GetAllSucursales();
+      lblShow.Text = string.Empty;
+
+      DataTable tableSucursales = _sucursalService.GetAllSucursales(queryFiler);
+
+      if (tableSucursales.Rows.Count == 0 || tableSucursales == null)
+      {
+        gridFiltros.DataSource = null;
+        gridFiltros.DataBind();
+        lblShow.Text = "No results found :( ";
+        return;
+      }
+
       gridFiltros.DataSource = tableSucursales;
       gridFiltros.DataBind();
     }
@@ -40,15 +51,13 @@ namespace Views
       }
 
       String queryFilter = $" WHERE Id_Sucursal = {input} ";
-      DataTable tableSucursales = _sucursalService.GetAllSucursales(queryFilter);
-      gridFiltros.DataSource = tableSucursales;
-      gridFiltros.DataBind();
-      // Sucursal sucursal = new Sucursal { Id = inputId };
+      this.Load_GridView(queryFilter);
 
     }
 
     protected void BtnShowAll_Click(object sender, EventArgs e)
     {
+      txtFind.Text = string.Empty;
       this.Load_GridView();
     }
   }

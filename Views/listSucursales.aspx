@@ -45,23 +45,18 @@
         <%-- Required Field Validator --%>
         <asp:RequiredFieldValidator runat="server"
           ControlToValidate="txtFind"
-          ID="requiredTxtFind" CssClass="validaciones" Text="Ingrese un ID" ValidationGroup="Filter"></asp:RequiredFieldValidator>
-        <%-- Range Validator --%>
-        <%--<asp:RangeValidator runat="server"
-          ID="rageFiltros" Text="ID Invalido"
-          ControlToValidate="txtFind"
-          Type="Integer" CssClass="validaciones"
-          ValidationGroup="Filter"
-          MinimumValue="1">
-        </asp:RangeValidator>--%>
-        <%--MaximumValue="15" , Setemos los valores desde appx.cs--%> 
+          ID="requiredTxtFind" CssClass="validaciones" Text="Ingrese un ID" ValidationGroup="Filter" Display="Dynamic"></asp:RequiredFieldValidator>
+        <%-- REGEX VALIDATOR --%>
+        <asp:RegularExpressionValidator ID="regexNumber" runat="server" ValidationGroup="Filter" CssClass="validaciones" ValidationExpression="[1-9][0-9]*$" Text="Only Numbers" ControlToValidate="txtFind" Display="Dynamic"></asp:RegularExpressionValidator>
+
         <%-- BUTTON FILTER--%>
-        <asp:Button runat="server" ID="btnFilter" Text="Filtrar"  ValidationGroup="Filter" CssClass="aspNet-Button" OnClick="BtnFilter_Click" />
+        <asp:Button runat="server" ID="btnFilter" Text="Filtrar" ValidationGroup="Filter" CssClass="aspNet-Button" OnClick="BtnFilter_Click" />
         <%-- BUTTON SHOW ALL --%>
-        <asp:Button runat="server" ID="btnShowAll" Text="Mostrar Todos"  CssClass="aspNet-Button" OnClick="BtnShowAll_Click" />
+        <asp:Button runat="server" ID="btnShowAll" Text="Mostrar Todos" CssClass="aspNet-Button" OnClick="BtnShowAll_Click" />
+        <asp:Label runat="server" ID="lblShow" CssClass="lblNotFound"></asp:Label>
       </span>
-      <asp:Label runat="server" ID="lblShow"></asp:Label>
     </div>
+  
 
     <%--Grid con los resultados: --%>
     <div class="gridFiltros">
