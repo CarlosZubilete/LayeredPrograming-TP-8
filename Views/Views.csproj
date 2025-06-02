@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DeleteSucursal.aspx" />
+    <Content Include="deleteSucursal.css" />
     <Content Include="index.aspx" />
     <Content Include="index.css" />
     <Content Include="listSucursales.aspx" />
@@ -74,6 +76,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteSucursal.aspx.cs">
+      <DependentUpon>DeleteSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteSucursal.aspx.designer.cs">
+      <DependentUpon>DeleteSucursal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

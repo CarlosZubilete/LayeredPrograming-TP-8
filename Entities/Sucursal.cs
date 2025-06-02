@@ -8,12 +8,18 @@ namespace Entities
 {
   public class Sucursal
   {
+    private int _id;
     private String _name;
     private String _address;
     private int _idProvince; 
     private String _description;
     public Sucursal() { }
  
+    public int Id
+    {
+      get { return Id; }
+      set { _id = Id;  }
+    }
     public String Name
     {
       get { return _name; }

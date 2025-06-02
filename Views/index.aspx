@@ -27,7 +27,7 @@
       </li>
       <%-- DELETE SUCUCSALES --%>
       <li class="navBar__ul__li">
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="" CssClass="navBar__link">
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/DeleteSucursal.aspx" CssClass="navBar__link">
                      Eliminar Sucursal
         </asp:HyperLink>
       </li>
@@ -85,5 +85,3 @@
   </form>
 </body>
 </html>
-
-<%-- TOTO: ADD  <asp:ScriptManager> ,   <asp:UpdatePanel>  <ContentTemplate> for not reload the page--%>
