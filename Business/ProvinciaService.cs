@@ -7,7 +7,6 @@ using Data;
 using System.Data;
 
 
-
 namespace Business
 {
   public class ProvinciaService

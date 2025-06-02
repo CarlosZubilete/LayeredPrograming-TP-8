@@ -36,39 +36,52 @@
 
   <h2 class="title">Agregar sucursales</h2>
 
+
   <form id="form1" runat="server">
-    <%-- Nombre Sucursal --%>
-    <div>
-      <span>Nombre Sucursal:</span>
-      <asp:TextBox runat="server" ID="txtNameSuc" MaxLength="100"></asp:TextBox>
-      <asp:RequiredFieldValidator ID="requiredNameSuc" runat="server" ControlToValidate="txtNameSuc" CssClass="validaciones">Este campo es requerido</asp:RequiredFieldValidator>
-    </div>
-    <%-- Descripcion Sucursal--%>
-    <div>
-      <span>Descripción: </span>
-      <asp:TextBox runat="server" ID="txtDescriptionSuc" MaxLength="100"></asp:TextBox>
-      <asp:RequiredFieldValidator ID="requiredDescriptionSuc" runat="server" ControlToValidate="txtDescriptionSuc" CssClass="validaciones">Este campo es requerido</asp:RequiredFieldValidator>
-    </div>
-    <%-- Provincias Sucursal --%>
-    <div>
-      <span>Provincia: 
+    <%-- SCRIPT MANAGER --%>
+    <asp:ScriptManager runat="server" ID="scriptManagerAddSucursal" />
+    <asp:UpdatePanel runat="server" ID="UpdatePanelAddSucursal">
+      <ContentTemplate>
+        <%-- Nombre Sucursal --%>
+        <div>
+          <span>Nombre Sucursal:</span>
+          <asp:TextBox runat="server" ID="txtNameSuc" MaxLength="100"></asp:TextBox>
+          <asp:RequiredFieldValidator ID="requiredNameSuc" runat="server" ControlToValidate="txtNameSuc" CssClass="validaciones">Este campo es requerido</asp:RequiredFieldValidator>
+        </div>
+        <%-- Descripcion Sucursal--%>
+        <div>
+          <span>Descripción: </span>
+          <asp:TextBox runat="server" ID="txtDescriptionSuc" MaxLength="100"></asp:TextBox>
+          <asp:RequiredFieldValidator ID="requiredDescriptionSuc" runat="server" ControlToValidate="txtDescriptionSuc" CssClass="validaciones">Este campo es requerido</asp:RequiredFieldValidator>
+        </div>
+        <%-- Provincias Sucursal --%>
+        <div>
+          <span>Provincia: 
             <asp:DropDownList runat="server" ID="ddlProvinciesSuc">
               <asp:ListItem Value="0" Enabled="True">-- Seleccionar -- </asp:ListItem>
             </asp:DropDownList>
-      </span>
+          </span>
 
-      <asp:RequiredFieldValidator ID="requiredProvinciesSuc" runat="server" ControlToValidate="ddlProvinciesSuc" CssClass="validaciones" InitialValue="0">Debe seleccionar una Provincia</asp:RequiredFieldValidator>
-    </div>
-    <%-- Direccion Sucursal --%>
-    <div>
-      <span>Dirección:</span>
-      <asp:TextBox runat="server" ID="txtAddressSuc" MaxLength="100"></asp:TextBox>
-      <asp:RequiredFieldValidator ID="requiredAddressSuc" runat="server" ControlToValidate="txtAddressSuc" CssClass="validaciones">Este campo es requerido</asp:RequiredFieldValidator>
-    </div>
-    <%-- Boton Enviar --%>
-    <asp:Button runat="server" ID="btnSend" Text="Enviar" />
-    <hr />
-    <asp:Label ID="lblShow" runat="server"></asp:Label>
+          <asp:RequiredFieldValidator ID="requiredProvinciesSuc" runat="server" ControlToValidate="ddlProvinciesSuc" CssClass="validaciones" InitialValue="0">Debe seleccionar una Provincia</asp:RequiredFieldValidator>
+        </div>
+        <%-- Direccion Sucursal --%>
+        <div>
+          <span>Dirección:</span>
+          <asp:TextBox runat="server" ID="txtAddressSuc" MaxLength="100"></asp:TextBox>
+          <asp:RequiredFieldValidator ID="requiredAddressSuc" runat="server" ControlToValidate="txtAddressSuc" CssClass="validaciones">Este campo es requerido</asp:RequiredFieldValidator>
+        </div>
+        <%-- Boton Enviar --%>
+        <asp:Button runat="server" ID="btnSend" Text="Enviar" OnClick="BtnSend_Click" CssClass="aspNet-Button"/>  
+      </ContentTemplate>     
+    </asp:UpdatePanel>
+
+    <%-- UPDATEPANEL WITH TIMER --%>
+    <asp:UpdatePanel ID="UpdatePanelMsg" runat="server">
+    <ContentTemplate>
+      <asp:Timer ID="timer_lblShow" runat="server" Interval="3000" OnTick="Timer_lblShow_Tick" />
+      <asp:Label ID="lblShow" runat="server" CssClass="lblShowMsg"/>
+    </ContentTemplate>
+  </asp:UpdatePanel>
   </form>
 </body>
 </html>

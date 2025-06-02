@@ -8,17 +8,12 @@ namespace Entities
 {
   public class Sucursal
   {
-    private int _id;
     private String _name;
     private String _address;
-    private String _province; // in Database is a int , CHEKOUT! 
+    private int _idProvince; 
     private String _description;
     public Sucursal() { }
-    public int Id
-    {
-      get { return _id; }
-      set { _id = value; }
-    }
+ 
     public String Name
     {
       get { return _name; }
@@ -29,10 +24,10 @@ namespace Entities
       get { return _address; }
       set { _address = value; }
     }
-    public String Province
+    public int IdProvince
     {
-      get { return _province; }
-      set { _province = value; }
+      get { return _idProvince; }
+      set { _idProvince = value; }
     }
     public String Description
     {
