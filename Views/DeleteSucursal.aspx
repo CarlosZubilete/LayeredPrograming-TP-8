@@ -41,22 +41,29 @@
     <%-- Busqueda de Sucursales --%>
     <div class="busqueda">
       <span class="busqueda__span" id="rageFiltro">Ingrese ID sucursal: 
-      <asp:TextBox runat="server" ID="txtFind" ValidationGroup="Filter"></asp:TextBox>
+      <asp:TextBox runat="server" ID="txtFind" ValidationGroup="delete"></asp:TextBox>
+
         <%-- Required Field Validator --%>
         <asp:RequiredFieldValidator runat="server"
           ControlToValidate="txtFind"
-          ID="requiredTxtFind" CssClass="validaciones" Text="Ingrese un ID" ValidationGroup="Filter" Display="Dynamic"></asp:RequiredFieldValidator>
-        <%-- REGEX VALIDATOR --%>
-        <asp:RegularExpressionValidator ID="regexNumber" runat="server" ValidationGroup="Filter" CssClass="validaciones" ValidationExpression="[1-9][0-9]*$" Text="Only Numbers" ControlToValidate="txtFind" Display="Dynamic"></asp:RegularExpressionValidator>
+          ID="requiredTxtFind" CssClass="validaciones" Text="Ingrese un ID" ValidationGroup="delete" Display="Dynamic"></asp:RequiredFieldValidator>
 
-        <%-- BUTTON FILTER--%>
-        <%--<asp:Button runat="server" ID="btnFilter" Text="Filtrar" ValidationGroup="Filter" CssClass="aspNet-Button" OnClick="BtnFilter_Click" />--%>
+        <%-- REGEX VALIDATOR --%>
+        <asp:RegularExpressionValidator ID="regexNumber" runat="server" ValidationGroup="delete" CssClass="validaciones" ValidationExpression="[1-9][0-9]*$" Text="Only Numbers" ControlToValidate="txtFind" Display="Dynamic"></asp:RegularExpressionValidator>
 
         <%-- ELIMINAR --%>
-        <asp:Button runat="server" ID="btnShowAll" Text="Eliminar" CssClass="aspNet-Button" />
-        <asp:Label runat="server" ID="lblShow" CssClass="lblNotFound"></asp:Label>
+        <asp:Button runat="server" ID="btnDelete" Text="Eliminar" CssClass="aspNet-Button" OnClick="btnDelete_Click" />
       </span>
     </div>
+    <%-- SCRIPT MANAGER --%>
+    <asp:ScriptManager runat="server" ID="scriptManagerAddSucursal" />
+    <%-- UPDATEPANEL WITH TIMER --%>
+    <asp:UpdatePanel ID="UpdatePanelMsg" runat="server">
+      <ContentTemplate>
+        <asp:Timer ID="timer_lblShow" runat="server" Interval="6000" OnTick="timer_lblShow_Tick" />
+        <asp:Label runat="server" ID="lblShowTable"></asp:Label>
+      </ContentTemplate>
+    </asp:UpdatePanel>
   </form>
 </body>
 </html>

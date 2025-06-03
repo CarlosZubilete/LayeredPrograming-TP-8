@@ -21,14 +21,14 @@ namespace Business
     {
       int cantRows;
 
-      Sucursal sucursal = new Sucursal { Name = name }; 
+      Sucursal sucursal = new Sucursal { Name = name };
       DaoSucursal dao = new DaoSucursal();
 
       if (dao.IsSucursaleDuplicate(sucursal))
       {
         return false;
       }
-      
+
       sucursal.Description = description;
       sucursal.IdProvince = idProvincia;
       sucursal.Address = address;
@@ -39,6 +39,30 @@ namespace Business
         return true;
       else
         return false;
+    }
+    // TODO: get the sucursal to show their data with anoteh function.
+    // TODO: create a function to verificate if idSuc exists.
+    public Sucursal GetSucursal(int idSucursal)
+    {
+      Sucursal sucursal = new Sucursal { Id = idSucursal };
+      DaoSucursal dao = new DaoSucursal();
+
+      if (sucursal.Id == -1) return sucursal; 
+
+      dao.GetSucursal(ref sucursal);
+
+      return sucursal; 
+    }
+    public bool ExistsSucursal(int idSucursal)
+    {
+      DaoSucursal dao = new DaoSucursal();
+      return dao.ExistsSucursal(idSucursal); 
+    }
+    public int DeleteSucursalById(int idSucursal)
+    {
+      Sucursal sucursal = new Sucursal { Id = idSucursal };
+      DaoSucursal dao = new DaoSucursal();
+      return dao.DeleteSucursal(sucursal);
     }
   }
 }

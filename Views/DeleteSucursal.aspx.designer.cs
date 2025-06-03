@@ -78,21 +78,48 @@ namespace Views
     protected global::System.Web.UI.WebControls.RegularExpressionValidator regexNumber;
 
     /// <summary>
-    /// btnShowAll control.
+    /// btnDelete control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btnShowAll;
+    protected global::System.Web.UI.WebControls.Button btnDelete;
 
     /// <summary>
-    /// lblShow control.
+    /// scriptManagerAddSucursal control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label lblShow;
+    protected global::System.Web.UI.ScriptManager scriptManagerAddSucursal;
+
+    /// <summary>
+    /// UpdatePanelMsg control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.UpdatePanel UpdatePanelMsg;
+
+    /// <summary>
+    /// timer_lblShow control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.Timer timer_lblShow;
+
+    /// <summary>
+    /// lblShowTable control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lblShowTable;
   }
 }

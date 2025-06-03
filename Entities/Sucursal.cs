@@ -17,8 +17,8 @@ namespace Entities
  
     public int Id
     {
-      get { return Id; }
-      set { _id = Id;  }
+      get { return _id; }
+      set { _id = value;  }
     }
     public String Name
     {
